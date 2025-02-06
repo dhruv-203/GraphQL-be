@@ -43,11 +43,6 @@ app.get("/example", (req: Request, res: Response) => {
 await server.start();
 app.use(
   "/graphql",
-  cors<cors.CorsRequest>({
-    origin: process.env.FRONTEND_URL || "",
-    credentials: true,
-  }),
-  express.json(),
   expressMiddleware(server)
 );
 
